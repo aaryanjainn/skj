@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // LOCAL
+// checking
 $config['base_url'] = 'http://localhost/skj';
 
 // LIVE
