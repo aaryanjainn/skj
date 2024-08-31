@@ -2,13 +2,17 @@
 header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
 // include ASSETS.'/css/slider.scss';
+
 $getInstaPhotos = [];
-foreach ($feed->data as $key => $instaData) {
-	if ($instaData->media_type != "VIDEO") {
-		$getInstaPhotos[] = $instaData;
+if (!empty($feed->data))
+{
+	foreach ($feed->data as $key => $instaData) {
+		if ($instaData->media_type != "VIDEO") {
+			$getInstaPhotos[] = $instaData;
+		}
 	}
 }
-?>
+	?>
 <!DOCTYPE html>
 
 <html>

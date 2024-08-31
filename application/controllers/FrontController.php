@@ -18,11 +18,12 @@ class FrontController extends CI_Controller
 
 		
         // Fetch data from the API
-        $response = file_get_contents($api_url);
-
-        // epd($response);
-        $data['feed'] = json_decode($response);
-        
+        $response = @file_get_contents($api_url);
+        if ($response === false) {
+            $data['feed'] = "";
+        } else {
+            $data['feed'] = json_decode($response);
+        }        
         
         $data['rates'] = $this->FrontMasterModel->get_rates();
 		

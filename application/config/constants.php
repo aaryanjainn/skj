@@ -89,10 +89,10 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 // USER DEFINED
 
 // -- LOCAL
-// define('BASE_URL', "http://localhost/skj");
+define('BASE_URL', "http://localhost/skj");
 
 // -- LIVE
-define('BASE_URL', "https://www.skjewellersjaipur.com");
+// define('BASE_URL', "https://www.skjewellersjaipur.com");
 
 // COMMON
 define('ASSETS',BASE_URL.'/assets/templates/novas');
