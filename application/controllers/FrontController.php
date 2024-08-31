@@ -11,13 +11,16 @@ class FrontController extends CI_Controller
 
     public function index() {
 		// Replace with your actual access token
-        $access_token = 'IGQWRObFN3eWtzMTdSSzFJeFpMaXdMRkV6aDh1emVfOWh2RnZAUYWlWd3YtMzRhSmhLQW4xUWZANUjhCRkRkeDB5MFg5eUl3UWxYemR2b1JVMjUtM1UxbENfdkZAwaC1qbkp0NUNsMllEQ0d0aWxmTVRIVExRc0dBN0UZD';
+        $access_token = 'IGQWRQMm1IMzBUV0tWcTR1aTdPaDF6QnBYbXVGQjlWSWhKLWJLSmVWYnhmYVdxdU1JV1Q2SUFsMUs0MlhtcUpXbWhNRGcxbTY4R1NhREhSbEI2UzBvcmN1UWNyMTVEMTVhcXUwRDBxTmQ5V1hSSTZAfVnhTbURnQU0ZD';
 		
         // API endpoint for fetching user's media
         $api_url = "https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=$access_token";
+
 		
         // Fetch data from the API
         $response = file_get_contents($api_url);
+
+        // epd($response);
         $data['feed'] = json_decode($response);
         
         
