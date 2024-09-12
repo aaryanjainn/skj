@@ -31,7 +31,7 @@ if (!empty($feed->data))
 	<link rel="stylesheet" type="text/css" href="<?= ASSETS; ?>/vendor/revolution/css/navigation.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
 	<link rel="stylesheet" type="text/css" href="<?= ASSETS; ?>/css/style.min.css" />
-	<link rel="stylesheet" type="text/css" href="<?= ASSETS; ?>/css/slider.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="<?= ASSETS; ?>/css/slider.css" /> -->
 	
 	<!--FONTS-->
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;display=swap'>
@@ -40,10 +40,6 @@ if (!empty($feed->data))
 	<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" rel="stylesheet">
-	
-	<!--<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Abril+Fatface&family=Black+Ops+One&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">-->
-
-	
     <style>
 		#preloader
 		{
@@ -64,7 +60,6 @@ if (!empty($feed->data))
             padding: 70px 0;
             overflow-x: hidden;
         }
-
 
         .my-slider {
             padding: 0 70px;
@@ -98,9 +93,72 @@ if (!empty($feed->data))
             color: #000;
             font-size: 26px;
         }
+		
     </style>
-    
-    
+	<style>
+		/* Maintain the original styles */
+		.main-menu {
+			position: relative;
+		}
+
+		.main-menu ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.menu-item {
+			position: relative;
+			display: inline-block; /* Aligns the menu items horizontally */
+		}
+
+		.menu-item a {
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			color: #333;
+		}
+
+		/* New styles for the dropdown */
+		.dropdown-menu-custom {
+			position: relative; /* Ensure the dropdown menu is positioned correctly */
+		}
+
+		.dropdown-content {
+			display: none; /* Hidden by default */
+			position: absolute; /* Position relative to the parent menu item */
+			top: 100%; /* Positions it directly below the parent menu item */
+			left: 0;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			min-width: 150px; /* Minimum width of the dropdown */
+			z-index: 1000; /* Ensures the dropdown appears on top */
+		}
+
+		.dropdown-content li {
+			width: 100%;
+		}
+
+		.dropdown-content li a {
+			padding: 10px 15px;
+			display: block;
+			color: #333;
+			text-decoration: none;
+		}
+
+		.dropdown-content li a:hover {
+			background-color: #f5f5f5;
+		}
+
+		/* Show the dropdown on hover */
+		.dropdown-menu-custom:hover .dropdown-content {
+			display: block;
+		}
+
+	</style>    
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7DGN9MT1"></script>
@@ -127,9 +185,8 @@ if (!empty($feed->data))
 	<!--<div id="preloader">-->
 	<!--</div>-->
 
-	<header class="header">
-
-		<div class="show-desktop-header header-hp-1 style-header-hp-1">
+	<div>	
+		<div class="show-desktop-header header-hp-1 style-header-hp-1" >
 			<div id="js-navbar-fixed" class="menu-desktop">
 				<div class="container-fluid">
 					<div class="menu-desktop-inner">
@@ -138,25 +195,46 @@ if (!empty($feed->data))
 							<a href="https://skjewellersjaipur.com"><img src="assets/photos/logo_t_a.png" style="transform: scale(1.5); width:100px;" alt="logo"></a>
 						</div>
 
-						<nav class="main-menu">
+						<!-- <nav class="main-menu">
 							<ul>
 								<li class="menu-item"> <a href="#testimonial" class="current">HOME</a></li>
 								<li class="menu-item"><a href="#products">PRODUCTS</a></li>
 								<li class="menu-item"><a href="#collection">COLLECTION</a></li>
 								<li class="menu-item"><a href="#testimonial">CUSTOMERS</a></li>
-								<li class="menu-item"><a href="#instagram">INSTAGRAM</a></li>
+								<li class="menu-item"><a href="#instagram">INSTA</a>
+									<ul>
+										<li>INSTAGRAM</li>
+										<li>INSTAMART</li>
+									</ul>
+								</li>
+							</ul>
+						</nav> -->
+
+						<nav class="main-menu">
+							<ul>
+								<li class="menu-item"><a href="#testimonial" class="current">HOME</a></li>
+								<li class="menu-item"><a href="#products">PRODUCTS</a></li>
+								<li class="menu-item"><a href="#collection">COLLECTION</a></li>
+								<li class="menu-item"><a href="#testimonial">CUSTOMERS</a></li>
+								<li class="menu-item dropdown-menu-custom">
+									<a href="#instagram">INSTA &#9662;</a>
+									<ul class="submenu dropdown-content">
+										<li><a href="">INSTAGRAM</a></li>
+										<li><a href="<?= BASE_URL;?>instamart">INSTAMART</a></li>
+									</ul>
+								</li>
 							</ul>
 						</nav>
 
 						<div class="header-right">
 							<div class="canvas canvas-btn-wrap">
+								<a href="<?= BASE_URL;?>login" class="btn btn-secondary">Log-in</a>
 								<button class="canvas-images canvas-btn" data-toggle="modal" data-target="#canvasModal">
 									<img src="https://freebw.com/templates/novas/images/icons/header-icon-3.png" alt="canvas">
 								</button>
 							</div>
 						</div>
 					</div>
-
 					<div class="modal fade" id="searchModal" role="dialog">
 						<button class="close" type="button" data-dismiss="modal">
 							<i class="zmdi zmdi-close"></i>
@@ -174,7 +252,6 @@ if (!empty($feed->data))
 							</div>
 						</div>
 					</div>
-
 					<div class="modal fade" id="canvasModal" role="dialog">
 						<button class="close" type="button" data-dismiss="modal">
 							<i class="zmdi zmdi-close"></i>
@@ -252,16 +329,16 @@ if (!empty($feed->data))
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
 
-		<div id="js-navbar-mb-fixed" class="show-mobile-header">
-
+		<div class="show-mobile-header" id="js-navbar-mb-fixed" >
 			<div class="mobile-top-header p-2 border-bottom border-dark">
 				<div class="logo-mobile">
-					<a href="https://skjewellersjaipur.com"><img src="assets/photos/logo_t.png" style="width: 110px; height: 110px;" alt="logo"></a>
+					<a href="https://skjewellersjaipur.com">
+						<img src="assets/photos/logo_t.png" style="width: 110px; height: 110px;" alt="logo">
+					</a>
 				</div>
 				<button class="hamburger hamburger--spin hidden-tablet-landscape-up " style="padding-top:35px;" id="toggle-icon">
 					<span class="hamburger-box">
@@ -345,24 +422,15 @@ if (!empty($feed->data))
 				</div>
 			</div>
 		</div>
-
-		
-			
-				
+	
 		<div class="social-overlap process-scetion mt100">
 			<div class="social-bar">
 				<div class="social-icons mb-3 iconpad text-center">
-				
-
 					<a href="https://www.facebook.com/skjewellersjaipur/" class="slider-nav-item"><i class="fab fa-facebook"></i></a>
 					<a href="https://wa.me/918504062109?text=Greetings S.K Jewellers, %0aI'm interested in your products. Can you please provide more info? %0aThank You." class="slider-nav-item"><i class="fab fa-whatsapp"></i></a>
 					<a href="https://www.instagram.com/s.k_jewellers_jaipur/" target="_blank" class="slider-nav-item"><i class="fab fa-instagram"></i></a>
 					<a href="tel:+918504062109" class="slider-nav-item"><i class="fa-solid fa-phone"></i></a>
-					
-					
 				</div>
 			</div>
 		</div>
-			
-		
-	</header>
+	</div>

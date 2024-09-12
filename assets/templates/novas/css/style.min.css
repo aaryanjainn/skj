@@ -728,11 +728,10 @@ textarea:-moz-placeholder {
 }
 
 .header-hp-1.style-header-hp-1 {
-    position: absolute;
     top: 0;
     width: 100%;
     z-index: 9999;
-    background: #fff
+    background: #fff;
 }
 
 .header-hp-1 .menu-desktop {
@@ -17903,3 +17902,14 @@ body.fontLoaded .css-1wmi9o6 {
 }
 
 /* slider client logo */
+
+
+/*_____________ CUSTOM CSS ______________*/
+
+    .mainInstaDiv
+    {
+        border:2px solid red;
+        padding:20px;
+    }
+
+/*_____________ CUSTOM CSS ______________*/

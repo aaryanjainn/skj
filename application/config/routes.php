@@ -52,6 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //----------- FRONT ROUTES --------------
 $route['default_controller'] = 'FrontController';
+$route['instamart'] = 'front/FrontFeatureController/instamart';
+$route['login'] = 'front/LoginController/userLogin';
+
 
 
 //----------- ADMIN ROUTES --------------
